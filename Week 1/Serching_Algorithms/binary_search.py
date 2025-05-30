@@ -31,8 +31,8 @@ def binary_search(arr,target):
 
     while(left<=right):
         mid = left+right//2
-        if Arr[mid] == target:
-            return f"Found target at this index position {mid} and value {Arr[mid]}"
+        if arr[mid] == target:
+            return f"Found target at this index position {mid} and value {arr[mid]}"
             # break
 
         elif arr[mid]>target:
