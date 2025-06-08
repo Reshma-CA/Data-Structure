@@ -7,16 +7,26 @@ class SinglyLinkedList:
     def __init__(self):
         self.head = None
 
-    def insert_at_head(self, data):
+    # Insert at End 
+    def insert_at_end(self, data):
         new_node = Node(data)
-        new_node.next = self.head
-        self.head = new_node
+        if self.head is None:
+            self.head = new_node
+            return
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = new_node
+        
+    # Delete at beginning
         
     def delete_at_beginning(self):
         if self.head is None:
             print("Linked List is already empty")
         else:
             self.head = self.head.next
+            
+    # Delete at specific position
             
     def delete_at_specific_position(self,pos):
         temp = self.head.next
@@ -27,6 +37,7 @@ class SinglyLinkedList:
         prev.next = temp.next
         temp.next = None
         
+    # Delete at End
             
     def pop(self):
         if self.head is None:
@@ -39,6 +50,7 @@ class SinglyLinkedList:
             prev = prev.next
         prev.next = None
        
+    # Display the all elements
     def display(self):
         current = self.head
         while current:
@@ -48,15 +60,15 @@ class SinglyLinkedList:
 
 # Example usage
 sll = SinglyLinkedList()
-sll.insert_at_head(40)
-sll.insert_at_head(30)
-sll.insert_at_head(20)
-sll.insert_at_head(10)
-sll.insert_at_head(5)
+sll.insert_at_end(10)
+sll.insert_at_end(20)
+sll.insert_at_end(30)
+sll.insert_at_end(40)
+sll.insert_at_end(50)
 sll.delete_at_beginning()
 sll.delete_at_specific_position(3)
-sll.display()         # Output: 10 -> 20 -> 40 -> None
+sll.display()         # Output: 20 -> 30 -> 50 -> None
 
 
 sll.pop()
-sll.display()         # Output: 10 -> 20 -> None
+sll.display()         # Output: 20 -> 30 -> None
