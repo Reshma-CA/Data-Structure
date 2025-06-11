@@ -17,6 +17,8 @@ def Display():
         print("Queue elements:")
         for item in queue:
             print(item)
+        print("Front of the queue is:",queue[0])
+        print("Rear of the queue is : ",queue[-1])
         
 queue = []
 
