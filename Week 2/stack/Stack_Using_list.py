@@ -46,9 +46,9 @@ stack.append("Welcome")
 stack.append("to")
 stack.append("my")
 stack.append("World")
-print(stack)
+print(stack)   # Answer: ['Welcome', 'to', 'my', 'World']
 
 stack.pop()
-print(stack)
+print(stack)    # Answer: ['Welcome', 'to', 'my']
 stack.pop()
-print(stack)
+print(stack)    # Answer: ['Welcome', 'to']
