@@ -39,6 +39,9 @@ class Queue:
             print(current.data, end=" -> ")
             current = current.next
         print("None")
+
+
+        
 q = Queue()
 
 q.enqueue(10)    # Output: 10 added to queue
