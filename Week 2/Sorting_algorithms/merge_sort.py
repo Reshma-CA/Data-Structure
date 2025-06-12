@@ -17,11 +17,11 @@ def merge_sort(arr):
     if len(arr) == 1:  # recursion base case thats the length of the array became 1
         return arr      # returns the array with array size 1
     mid = len(arr) // 2
-    left_half = arr[:mid]
-    right_half = arr[mid:]
+    left_half = arr[:mid]  # Divide left subarray basis of mid 
+    right_half = arr[mid:]  # Divide right subarray basis of mid 
     left = merge_sort(left_half )
     right = merge_sort(right_half)
-    return merge(left, right)
+    return merge(left, right)  # divided left and right subarray to give merge() for conquer
     
 Array = [78,2,45,4,95,11,53,6,77,100]
 result_array = merge_sort(Array)
