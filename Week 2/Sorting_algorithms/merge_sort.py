@@ -8,14 +8,15 @@ def merge(li1, li2):   # the main merge funtion that is used to merge two sorted
         else:
             result.append(li2[j])
             j += 1
-    result.extend(li1[i:])
-    result.extend(li2[j:])
+    result.extend(li1[i:])   # remaining left array element added to result list
+    result.extend(li2[j:])   # remaining right array element added to result list
     return result    # returns the sorted array as a new array named "result"
 
 
 def merge_sort(arr):
     if len(arr) == 1:  # recursion base case thats the length of the array became 1
-        return arr      # returns the array with array size 1
+        return arr     # returns the array with array size 1
+       
     mid = len(arr) // 2
     left_half = arr[:mid]  # Divide left subarray basis of mid 
     right_half = arr[mid:]  # Divide right subarray basis of mid 
