@@ -1,23 +1,28 @@
-Arr = [10,20,30,40,50,60]
+Array = [10,5,23,96,52,14,6,20]
 
-target = 30
-left = 0
-right = len(Arr)-1
-   
+for i in range(len(Array)):
+    min_pos = i
+    for j in range(i+1,len(Array)):
+        if Array[j]<Array[min_pos]:
+            min_pos =j
+            
+    Array[i],Array[min_pos] = Array[min_pos],Array[i]
+    
+print("Selection Sort result: ",Array)
 
-while(left<=right):
-    mid = left+right//2
-    if Arr[mid] == target:
-        print(f"Found target at this index position {mid} and value {Arr[mid]}")
-        break
+############################################################################
+# using function
 
-    elif Arr[mid]>target:
-        right = mid-1
+def selection_sort(Array):
+    for i in range(len(Array)):
+        min_pos = i
+        for j in range(i+1,len(Array)):
+            if Array[j]<Array[min_pos]:
+                min_pos =j
+                
+        Array[i],Array[min_pos] = Array[min_pos],Array[i]
+    return Array
 
-    else:
-        left = mid+1
-
-if(left>right):
-    print("Target element not found in this array")
-        
-
+Array = [10,5,23,96,52,14,6,20] 
+result = selection_sort(Array)
+print("Selection Sort result: ",result)
