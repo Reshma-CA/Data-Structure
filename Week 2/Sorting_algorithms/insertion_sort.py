@@ -1,23 +1,33 @@
-Arr = [10,20,30,40,50,60]
+Array = [10,5,23,96,52,14,6,20] 
 
-target = 30
-left = 0
-right = len(Arr)-1
-   
-
-while(left<=right):
-    mid = left+right//2
-    if Arr[mid] == target:
-        print(f"Found target at this index position {mid} and value {Arr[mid]}")
-        break
-
-    elif Arr[mid]>target:
-        right = mid-1
-
-    else:
-        left = mid+1
-
-if(left>right):
-    print("Target element not found in this array")
+for i in range(1,len(Array)):
+    key = Array[i]
+    j = i-1
+    
+    while j>=0 and key<Array[j]:
+        Array[j+1] = Array[j]
+        j-=1
         
+    Array[j+1] = key
+    
+print(Array)
 
+
+##################################################################
+# using function
+
+def Insertion_sort(Array):
+    for i in range(1,len(Array)):
+        key = Array[i]
+        j = i-1
+        
+        while j>=0 and key<Array[j]:
+            Array[j+1] = Array[j]
+            j-=1
+            
+        Array[j+1] = key
+    return Array
+    
+Array = [10,5,23,96,52,14,6,20] 
+result = Insertion_sort(Array)
+print("Insertion sort result",result)
