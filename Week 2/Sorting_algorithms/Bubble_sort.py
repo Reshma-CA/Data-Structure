@@ -1,23 +1,29 @@
-Arr = [10,20,30,40,50,60]
+Array = [10,5,23,96,52,14,6,10]
 
-target = 30
-left = 0
-right = len(Arr)-1
-   
+n = len(Array)
 
-while(left<=right):
-    mid = left+right//2
-    if Arr[mid] == target:
-        print(f"Found target at this index position {mid} and value {Arr[mid]}")
-        break
+for i in range(n):
+    for j in range(n-i-1):
+        if Array[j]>Array[j+1]:
+            temp = Array[j]
+            Array[j]= Array[j+1]
+            Array[j+1] = temp
 
-    elif Arr[mid]>target:
-        right = mid-1
+print("Bubble sorted result:",Array)
 
-    else:
-        left = mid+1
+######################################################
 
-if(left>right):
-    print("Target element not found in this array")
-        
+# using function
 
+def Bubble_sorted_array(Array):
+
+    n= len(Array)
+    for i in range(n):
+        for j in range(n-i-1):
+            if Array[j]>Array[j+1]:
+                Array[j],Array[j+1] = Array[j+1],Array[j]
+    return Array
+    
+Array = [10,5,23,96,52,14,6,10]
+result = Bubble_sorted_array(Array)
+print("Bubble sorted result:",result)
