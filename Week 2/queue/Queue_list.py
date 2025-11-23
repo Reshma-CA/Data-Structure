@@ -59,3 +59,25 @@ queue.pop(0)
 print(queue)
 queue.pop(0)
 print(queue)
+##################################################################
+
+# using class
+class Queue:
+    def __init__(self):
+        self.values = []
+        
+    def enqueue(self,x):
+        self.values.append(x) # element add only End side
+    def Dequeue(self):
+        front = self.values[0] # element delete only front side
+        self.values = self.values[1:]
+        return front
+        
+q = Queue()
+q.enqueue(10)
+q.enqueue(20)
+q.enqueue(30)
+q.enqueue(40)
+q.enqueue(50)
+print(q.values)
+print(q.Dequeue())

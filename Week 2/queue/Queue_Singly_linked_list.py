@@ -52,3 +52,49 @@ q.display()      # Output: 10 -> 20 -> 30 -> None
 
 q.dequeue()      # Output: 10 removed from queue
 q.display()      # Output: 20 -> 30 -> None
+
+#########################################################################
+# more understandable
+
+# queeue implimenting in linked list
+
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+        
+class Queue:
+    def __init__(self):
+        self.head = None
+        
+    def enqueue(self,data): # insert_at_End
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        
+        temp =  self.head
+        while temp.next:
+            temp = temp.next
+            
+        temp.next = new_node
+        
+    def dequeue(self): # delete at beginning
+        self.head =  self.head.next
+        
+    def display(self):
+        temp = self.head
+        
+        while temp:
+            print(temp.data, end="=>")
+            temp = temp.next
+            
+q = Queue()
+q.enqueue(10)
+q.enqueue(20)
+q.enqueue(30)
+q.enqueue(40)
+q.enqueue(50)
+q.enqueue(60)
+q.dequeue()
+q.display()

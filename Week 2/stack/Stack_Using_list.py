@@ -52,3 +52,25 @@ stack.pop()
 print(stack)    # Answer: ['Welcome', 'to', 'my']
 stack.pop()
 print(stack)    # Answer: ['Welcome', 'to']
+
+###################################################################
+
+# using class 
+class Stack:
+    def __init__(self):
+        self.values = []
+    def push(self,x):
+        self.values = [x] + self.values
+        
+    def Pop(self):
+        front =  self.values.pop(0)
+        return front
+        
+s = Stack()
+s.push(10)
+s.push(20)
+s.push(30)
+s.push(40)
+s.push(50)
+print(s.values)
+print(s.Pop())
